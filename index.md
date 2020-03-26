@@ -1,37 +1,25 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/gadada/gadada.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gadada/gadada.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## 葛  伟
+### 15526483345 /ga_dada@qq.com
+### 江西省萍乡市安源区
+### 教育背景
+### 湖南中医药大学制药工程专业（2015年9月——2019年6月）
+### 普通一本高校
+### 相关课程：制药工艺学，GMP教程，工业药剂学，制药工程原理与设备，CAD工程制图，制药设备与车间设计，中药分离工程，药事管理学，化工仪表和自动控制等
+### 工作经历
+### 中国轻工业长沙有限公司（2018年7月——2018年12月）
+### 参与项目流程图，设备一览表，厂房平面图的设计与修改，以及一些GMP资料的筛选和翻译工作。
+### 杭州华东医药有限公司（2019年2月——2019年6月）
+### 质检部担任QC<质量控制>职位，参与药品相关检测工作。
+### 社团和组织经历
+### 校学生会纠察队科技部部长（2015年9月——2017年9月）
+### 管理和实时更新校网保卫处和公众号的内容，自主设计部门宣传栏海报，宣传视频等，在部门承办的校级比赛中管理各种智能设备的使用。
+### 班级团支书（2017年9月——2018年6月）
+### 管理班级团内事务，保障同学们的入党工作。
+### 技能及奖项
+### 国家二级计算机¬office
+### 英语CET 4
+### “东富龙杯”全国大学生制药工程设计竞赛三等奖
+### “药院杯”药学院篮球赛第一名
+###C1机动车驾驶证
