@@ -4,9 +4,9 @@ main:
     url: /
   - title: "About me"
     url: /_post/Self introduction
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Blogs"
+    url: /
+  - title: "Study Notes"
+    url: /
+  - title: "Research"
+    url: /
