@@ -1,5 +1,5 @@
 ---
-title: "我的Ubuntu环境"
+title: "我的Ubuntu环境_转载"
 tags:
   - Step by step
 ---
@@ -175,7 +175,7 @@ config/vim
 [dotvimrc](https://github.com/huajianmao/config/blob/master/vim/dotvimrc)的内容：
 
 ``` vim
-let mapleader="," 
+let mapleader=","
 
 set nocompatible              " be improved, required
 filetype off                  " required
