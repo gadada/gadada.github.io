@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "Ga"
-  avatar           : /assets/images/profile.png
+  avatar           : /images/head1.jpg
   # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Machine learning"
   location         : "Beijing, China"
