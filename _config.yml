@@ -278,7 +278,7 @@ compress_html:
      permalink: /blogs/
    research:
      output: true
-     permalink: /research/
+     permalink: /search/
 
 # Defaults
 defaults:
@@ -306,10 +306,10 @@ defaults:
       share: true
       related: true
 
-  # _research
+  # _search
   - scope:
       path: ""
-      type: research
+      type: search
     values:
       layout: single
       author_profile: true
