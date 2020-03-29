@@ -2,6 +2,8 @@
 title: "我的Ubuntu环境_转载"
 tags:
   - Step by step
+categories:
+  - Beginning
 ---
 
 2003年在浙大读书的时候，有一门选修课是关于Linux操作系统使用的，
