@@ -2,11 +2,15 @@
 main:
   - title: "Homepage"
     url: /
+
   - title: "Posts"
     url: /posts/
+
   - title: "Blogs"
     url: /blogs/
+
   - title: "Search"
     url: /search/
+
   - title: "About"
     url: /Self_introduction/
