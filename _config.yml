@@ -268,6 +268,17 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+ collections:
+   posts:
+     output: true
+     permalink: /posts/
+   blogs:
+     output: true
+     permalink: /blogs/
+   research:
+     output: true
+     permalink: /research/
 
 # Defaults
 defaults:
@@ -275,6 +286,30 @@ defaults:
   - scope:
       path: ""
       type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+
+  # _blogs
+  - scope:
+      path: ""
+      type: blogs
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: # true
+      share: true
+      related: true
+
+  # _research
+  - scope:
+      path: ""
+      type: research
     values:
       layout: single
       author_profile: true
