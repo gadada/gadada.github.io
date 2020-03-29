@@ -1,12 +1,12 @@
 # main links
 main:
-  - title: "博客"
+  - title: "Blogs"
     url: /
-  - title: "归档"
+  - title: "Archives"
     url: /cloud/
-  - title: "研究"
+  - title: "Research"
     url: /research/
-  - title: "笔记"
+  - title: "Notes"
     url: /notes/
-  - title: "关于"
+  - title: "About"
     url: /cv/
