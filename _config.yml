@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "zh-CN"
-title                    : "技术杂货铺hjmao"
+title                    : "Ga!"
 title_separator          : " @"
-name                     : &name "Huajian Mao"
+name                     : &name "ga"
 description              : &description "Log my life."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -82,12 +82,12 @@ cv:
 
 # Site Author
 author:
-  name             : "Huajian Mao"
-  avatar           : "/assets/images/profile.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "System Architect"
+  name             : "Gadada"
+  avatar           : "/images/head.jpg"
+  bio              : "artificial intelligence"
   location         : "Beijing, China"
   phone            :
-  email            : huajianmao@gmail.com
+  email            : ga_dada@qq.com
   uri              :
   bitbucket        :
   codepen          :
@@ -95,12 +95,12 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : huajianmao
+  github           : gadada
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : huajianmao
+  linkedin         : gadada
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
@@ -108,10 +108,10 @@ author:
   tumblr           :
   twitter          :
   vine             :
-  weibo            : huajianmao
+  weibo            :
   xing             :
   youtube          : # "https://youtube.com/c/MichaelRoseDesign"
-  website          : huajianmao.github.io
+  website          : gadada.github.io
 
 
 # Reading Files
