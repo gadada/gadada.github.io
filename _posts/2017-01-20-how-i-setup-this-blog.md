@@ -2,8 +2,6 @@
 title: "Github Pages博客搭建过程记录_转载"
 tags:
   - Step by step
-categories:
-  - Beginning
 ---
 
 原来的博客许久没有打理了，想着重新在[Github Pages](https://github.io)上架个博客系统，以便对自己的一些想法、工作等有个记录。

@@ -1,0 +1,47 @@
+<!-- Use icons from fontawesome when you are adding new item in the contact list  -->             
+
+                 
+     <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile-img" src="{% if site.author.avatar %}{{ site.author.avatar }}{% else %}/assets/images/profile.png{% endif %}" alt="profile picture" />
+                <h2 class="name">{% if site.author.name %}{{site.author.name}}{% else %}Huajian Mao{% endif %}</h2>
+                <h3 class="tagline">{% if site.author.bio %}{{site.author.bio}}{% else %}Full Stack Developer{% endif %}</h3>
+            </div><!--//profile-container-->
+            
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                   
+                   {% if site.author.email %}
+                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto: {{site.author.email}}">{{site.author.email}}</a></li>
+                    {% endif %}
+                    
+                    {% if site.author.phone %}
+                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:{{site.author.phone}}">{{site.author.phone}}</a></li>
+                    {% endif %}
+                    
+                    {% if site.author.website %}
+                    <li class="website"><i class="fa fa-globe"></i><a href="http://{{site.author.website}}" target="_blank">{{site.author.website}}</a></li>
+                    {% endif %}
+                    
+                    {% if site.author.linkedin %}
+                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="https://in.linkedin.com/in/{{site.author.linkedin}}" target="_blank">{{site.author.linkedin}}@LinkedIn</a></li>
+                    {% endif %}
+                    
+                    {% if site.author.github %}
+                    <li class="github"><i class="fa fa-github"></i><a href="http://github.com/{{site.author.github}}" target="_blank">github.com/{{site.author.github}}</a></li>
+                    {% endif %}
+                    
+                    {% if site.author.weibo%}
+                    <li class="twitter"><i class="fa fa-weibo"></i><a href="https://weibo.com/{{site.author.weibo}}" target="_blank">{{site.author.weibo}} @AiiOfU</a></li>
+                    {% endif %}
+                    
+                    {% if site.author.twitter %}
+                    <li class="twitter"><i class="fa fa-twitter"></i><a href="https://twitter.com/{{site.author.twitter}}" target="_blank">{{site.author.twitter}}</a></li>
+                    {% endif %}
+                    
+                </ul>
+            </div><!--//contact-container-->
+           {% include cv/education.html %}
+           {% include cv/language.html %}
+            
+        </div><!--//sidebar-wrapper-->
