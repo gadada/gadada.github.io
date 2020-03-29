@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "zh-CN"
-title                    : "Ga'home"
+title                    : "Homepage_ga"
 title_separator          : " @"
 name                     : &name "ga"
 description              : &description "Log my life."
