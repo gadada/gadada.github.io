@@ -1,5 +1,5 @@
 ---
-title: "Github Pages博客搭建过程记录"
+title: "Github Pages博客搭建过程记录_转载"
 tags:
   - Step by step
 ---
@@ -12,7 +12,7 @@ Github Pages已经被用的很多了，它支持[Jekyll](https://jekyllrb.com/)�
 
 综上，我的博客主要是基于[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)以及[Online CV](http://jekyllthemes.org/themes/online-cv/)这两个Jekyll模板进行整合，过程当中略微做了一些小改动。
 
-其实，不管Minimal Mistakes还是Online CV的搭建步骤已经写的非常详细了。本篇记录仅是为自己记录一下整个过程，以免下次如果有需要重新搭的时候还要看完整个文档才能构建。如果本文恰好能帮到您，那最好不过了！ :) 
+其实，不管Minimal Mistakes还是Online CV的搭建步骤已经写的非常详细了。本篇记录仅是为自己记录一下整个过程，以免下次如果有需要重新搭的时候还要看完整个文档才能构建。如果本文恰好能帮到您，那最好不过了！ :)
 
 
 {% include toc %}
