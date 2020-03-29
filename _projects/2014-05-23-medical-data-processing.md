@@ -1,0 +1,17 @@
+---
+title: "Medical Data Processing Platform"
+excerpt: "A platform for medical data collecting, processing and serving."
+header:
+  overlay_image: /assets/images/projects/cloudphr/cloudphr-header.jpg
+  overlay_filter: 0.3
+  logo: /assets/images/projects/leetcode/cloudphr-logo.jpg
+  cta_label : Learn More
+  cta_url: "https://github.com/AMMSCoders/cloudphr"
+categories:
+  - EHR
+  - Cloud
+
+modified: 2016-12-28T10:45:09-04:00
+---
+
+Coming soon...

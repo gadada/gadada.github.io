@@ -1,0 +1,27 @@
+---
+layout: splash
+permalink: /cloud/
+title: "归档"
+---
+{% case site.category_archive.type %}
+  {% when "liquid" %}
+    {% assign path_type = "#" %}
+  {% when "jekyll-archives" %}
+    {% assign path_type = nil %}
+{% endcase %}
+
+
+<h2 id="categories" class="archive__subtitle">分类</h2>
+{% include group-by-array collection=site.posts field="categories" %}
+{% for category in group_names %}
+  {% assign number = (group_items[forloop.index0] | size) %}
+  <a href="{{ category | slugify | prepend: path_type | prepend: site.category_archive.path | absolute_url }}" class="page__taxonomy-item" rel="tag">{{ category }} ({{ number }})</a>
+{% endfor %}
+
+
+<h2 id="tags" class="archive__subtitle">标签</h2>
+{% include group-by-array collection=site.posts field="tags" %}
+{% for tag in group_names %}
+  {% assign number = (group_items[forloop.index0] | size) %}
+  <a href="{{ tag | slugify | prepend: path_type | prepend: site.tag_archive.path | absolute_url }}" class="page__taxonomy-item" rel="tag">{{ tag }} ({{ number }})</a>
+{% endfor %}

@@ -1,0 +1,7 @@
+_id: d0c057b0-e084-11e6-8015-bd40ef4447e0
+message: "If you have not added staticmanapp as a collaborator and have not accessed `https://api.staticman.net/v1/connect/{your GitHub username}/{your repository name}` to accept the invitation, an error as follows will happen:\r\n\r\n``` markdown\r\n{\"code\":404,\"status\":\"Not Found\",\"message\":\"{\\\"message\\\":\\\"Not Found\\\",\\\"documentation_url\\\":\\\"https://developer.github.com/v3/repos/contents/\\\"}\"}\r\n```"
+name: Huajian Mao
+email: 47dc6ef352db5324227d6cc85bfc026c
+url: 'https://huajianmao.github.io'
+hidden: ''
+date: '2017-01-22T09:26:12.813Z'
