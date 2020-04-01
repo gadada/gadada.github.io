@@ -110,7 +110,7 @@ main:
 
  - 修改`_config.yml`文件
 
-   ``` yaml
+``` yaml
   # Collections
     collections:
     blogs:
@@ -159,7 +159,7 @@ main:
       share: true
       related: true
 
-   ```
+```
 
 #### 添加所需的文件
 创建`_pages`目录，并在该目录下创建相应的文件：
