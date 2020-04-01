@@ -250,12 +250,11 @@ Online CV使用的是单独的[css文件](https://github.com/gadada/gadada.githu
 ``` html
 <!-- _layouts/cv.html -->
 <div class="get-pdf">
-  <a href="{{site.url}}{{site.baseurl}}/assets/docs/cv/resume.english.pdf">PDF</a>
+  <a href="{{site.url}}{{site.baseurl}}/assets/docs/cv/test.pdf">PDF</a>
 </div>
 ```
 
 ``` css
-/* assets/css/cv/styles.css */
 .get-pdf {
   position: absolute;
   margin-left: -65px;
@@ -345,15 +344,15 @@ comments:
 #### 添加staticmanapp为collaborator
 如上文原理中的介绍，staticman会将用户提交的comments转换成一个文件，并且push到blog所在的库中。
 因此，Github Pages对应的blog库需要给staticman相应的push代码的权限。
-因此，我们需要在[`Settings` -> `Collaborators`](https://github.com/huajianmao/huajianmao.github.io/settings/collaboration)中添加`staticmanapp`为Collaborator。
+因此，需要在[`Settings` -> `Collaborators`](https://github.com/gadada/gadada.github.io/settings/collaboration)中添加`staticmanapp`为Collaborator。
 
 #### 让staticman接受你的collaborator邀请
-我们在向staticman发送邀请后，staticman需要接受该邀请，才能开始往我们的blog库中push代码。
-staticman提供了一个api来让用户自己去操作接受我们的邀请。
+在向staticman发送邀请后，staticman需要接受该邀请，才能开始往blog库中push代码。
+staticman提供了一个api来让用户自己去操作接受邀请。
 该API是`https://api.staticman.net/v1/connect/{your GitHub username}/{your repository name}`。
-所以我们需要在浏览器中请求一遍该地址。
+需要在浏览器中请求一遍该地址。
 
-如果我们没有将staticman添加为collaborator或者，没有访问该API让它接受邀请，那么我们在评论的时候，会提示有错。
+如果没有将staticman添加为collaborator或者，没有访问该API让它接受邀请，那么在评论的时候，会提示有错。
 此时，如果打开浏览器的调试功能的话，你会发现错的原因是对应URI找不到。
 
 ``` markdown
