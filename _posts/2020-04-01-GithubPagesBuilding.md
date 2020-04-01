@@ -29,6 +29,7 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
  3. Clone it to local
 > **public = free，clone need git bash or github desktop**
 
+
 ### Copy files from Minimal Mistakes
  1. 下载[Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes/archive/master.zip)代码包
  2. 解压到clone的库目录中
