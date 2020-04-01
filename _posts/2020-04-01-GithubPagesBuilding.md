@@ -34,13 +34,15 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
  2. 解压到clone的库目录中
  3. 根据Minimal Mistake的[Quick Start](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)的说明，删除多余的文件：`rm -r .editorconfig .gitattributes .github docs test CHANGELOG.md minimal-mistakes-jekyll.gemspec README.md screenshot-layouts.png screenshot.png`
  4. push到github中:
-  `git add --all`
-  `git commit -m "Firs Push"`
-  `git push -u origin master`
+ ``` yaml
+  git add --all
+  git commit -m "Firs Push"
+  git push -u origin master
+```
 
 ## 配置Minimal Mistakes
 在上面的步骤完成后，在浏览器里打开username.github.io就能看到：
-![Page after first commit]({{site.url}}{{site.baseurl}}/images/after-first-commit.jpg)
+![Page after first commit]({{site.url}}{{site.baseurl}}/images/posts/first-commit.jpg)
 
 ### 博客基础信息配置
 Jekyll的配置文件为`_config.yml`，该文件可以对大部分的系统信息进行配置。
@@ -48,51 +50,49 @@ Jekyll的配置文件为`_config.yml`，该文件可以对大部分的系统信�
 
 ``` yaml
 locale                   : "zh_CN"
-title                    : "HJ's Homepage"
+title                    : "Ga's Homepage"
 title_separator          : "<"
-name                     : "Huajian Mao"
-description              : "Log my life."
-repository               : huajianmao/huajianmao.github.io
+name                     : "Gadada"
+description              : "Hello World"
+repository               : gadada/gadada.github.io
 
 # Site Author
 author:
-  name             : "Huajian Mao"
-  avatar           : /assets/images/profile.png
-  bio              : "System Architect"
+  name             : "Gadada"
+  avatar           : /images/head.jpg
+  bio              : "Computer Science"
   location         : "Beijing, China"
-  email            : huajianmao@gmail.com
-  github           : huajianmao
-  linkedin         : huajianmao
-  weibo            : huajianmao
+  email            : ga_dada@qq.com
+  github           : gadada
 
 timezone: Asia/Shanghai
 ```
 
-### 配置系统的favicon
-默认模板中并没有放置favicon，所以浏览器tab栏里显示的是好丑的一个file图标。
-为了能够调整favicon，先在网上找了个可以将图片转换为favicon的[网站](http://www.favicon-generator.org/)，然后将自己的一张图片转换成了一个favicon.ico，并将favicon.ico放置在`assets/images/favicon.ico`，同时在`_include/head/custom.html`文件中添加一行：
+### 配置favicon
+网上有许多将图片转换为favicon的[网站](http://www.favicon-generator.org/)，然后将图片转换成了favicon.ico，并将favicon.ico放置在`/images/favicon.ico`，同时在`_include/head/custom.html`文件中添加一行：
 
 ``` html
-<link rel="shortcut icon" href="{{site.baseurl}}/assets/images/favicon.ico">
+<link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.ico">
 ```
-在完成这一步并commit后，便可以看到浏览器的tab栏中的favicon变成了自己的图片了。
+在完成这一步并commit后，便可以看到浏览器tab栏中的favicon变成了自己的图片了。
 
 
 ### 配置导航栏
 Jekyll的导航栏数据主要在`_data/navigation.yml`中指定。
-我主要是希望自己能在本博客中，记录一些平时的想法（Blog），研究的一些内容(Research)，平时的一些项目(Projects)，经常使用的一些工具的配置及使用心得(Tools)，以及我的个人简历(About)。
-因此，我将我的`_data/navigation.yml`做了如下修改。
+本小站中主要分为三部分，记录一些日常的想法(Blogs)，分类查找文章(Archives)，未来可能研究的一些内容(Research)，平时的一些学习记录(Notes)，，以及我的个人说明(About)。
+如上所述，将`_data/navigation.yml`做了如下修改。
 
 ``` yaml
+# main links
 main:
-  - title: "Blog"
+  - title: "Blogs"
     url: /
+  - title: "Archives"
+    url: /cloud/
   - title: "Research"
     url: /research/
-  - title: "Projects"
-    url: /projects/
-  - title: "Tools"
-    url: /tools/
+  - title: "Notes"
+    url: /notes/
   - title: "About"
     url: /cv/
 ```
