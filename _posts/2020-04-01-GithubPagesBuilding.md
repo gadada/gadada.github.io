@@ -31,7 +31,7 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
 
 ### Copy files from Minimal Mistakes
  1. 下载[Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes/archive/master.zip)代码包
- 2. 将包的内容解压到clone的库目录中
+ 2. 解压到clone的库目录中
  3. 根据Minimal Mistake的[Quick Start](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)的说明，删除多余的文件：`rm -r .editorconfig .gitattributes .github docs test CHANGELOG.md minimal-mistakes-jekyll.gemspec README.md screenshot-layouts.png screenshot.png`
  4. commit添加的文件，并push到github中:
     `git add --all`
@@ -39,7 +39,7 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
     `git push -u origin master`
 
 ## 配置Minimal Mistakes
-在上面的步骤完成后，在浏览器里打开username.github.io就能看到:
+在上面的步骤完成后，在浏览器里打开username.github.io就能看到：
 ![Page after first commit]({{site.url}}{{site.baseurl}}/images/after-first-commit.jpg)
 
 ### 博客基础信息配置
