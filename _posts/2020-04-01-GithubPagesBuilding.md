@@ -47,7 +47,7 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
 
 ### 博客基础信息配置
 Jekyll的配置文件为`_config.yml`，该文件可以对大部分的系统信息进行配置。
-这个过程中，我主要对以下参数进行了设置，需要将`profile.png`放到`assets/images`目录中：
+这个过程中，我主要对以下参数进行了设置，需要将`head.jpg`放到`/images`目录中：
 
 ``` yaml
 locale                   : "zh_CN"
@@ -70,7 +70,7 @@ timezone: Asia/Shanghai
 ```
 
 ### 配置favicon
-网上有许多将图片转换为favicon的[网站](http://www.favicon-generator.org/)，然后将图片转换成了favicon.ico，并将favicon.ico放置在`/images/favicon.ico`，同时在`_include/head/custom.html`文件中添加一行：
+网上有许多将图片转换为favicon的[网站](http://www.favicon-generator.org/)，然后将图片转换成了favicon.ico，并将favicon.ico放置在`/images`，同时在`_include/head/custom.html`文件中添加一行：
 
 ``` html
 <link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.ico">
