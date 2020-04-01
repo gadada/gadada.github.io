@@ -113,6 +113,9 @@ main:
    ``` yaml
    # Collections
     collections:
+      blogs:
+        output: true
+        permalink: /:collection/:path/
       research:
         output: true
         permalink: /:collection/:path/
