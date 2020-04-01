@@ -227,7 +227,7 @@ Online CV使用的是单独的[css文件](https://github.com/gadada/gadada.githu
 }
 ```
 
-此外，Online CV使用了[Responsive css](https://en.wikipedia.org/wiki/Responsive_web_design)，如果直接使用上面定义的`back-to-home`样式，那么在小屏幕的时候，Online CV的主体样式变化后，`Home`按钮依然会在左边，并且会被屏幕挡住。基于这个原因，还需要在`styles.css`中添加相应的[Responsive CSS](https://github.com/gadada/gadada.github.io/blob/master/assets/css/cv/styles.css#L313)，其中`max-width: 1100px`是根据`Online CV主体页面的宽度`+`按钮宽度的两倍`计算得到。
+此外，Online CV使用了[Responsive CSS](https://en.wikipedia.org/wiki/Responsive_web_design)，如果直接使用上面定义的`back-to-home`样式，那么在小屏幕的时候，Online CV的主体样式变化后，`Home`按钮依然会在左边，并且会被屏幕挡住。基于这个原因，还需要在`styles.css`中添加相应的[Responsive CSS](https://github.com/gadada/gadada.github.io/blob/master/assets/css/cv/styles.css#L313)，其中`max-width: 1100px`是根据`Online CV主体页面的宽度`+`按钮宽度的两倍`计算得到。
 
 ``` css
 @media (max-width: 1100px) { /* 960px + 2 * (50 + 2*10)px*/
