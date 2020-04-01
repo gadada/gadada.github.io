@@ -111,54 +111,54 @@ main:
  - 修改`_config.yml`文件
 
    ``` yaml
-   # Collections
+  # Collections
     collections:
-      blogs:
-        output: true
-        permalink: /:collection/:path/
-      research:
-        output: true
-        permalink: /:collection/:path/
-      notes:
-        output: true
-        permalink: /:collection/:path/
+    blogs:
+      output: true
+      permalink: /:collection/:path/
+    research:
+      output: true
+      permalink: /:collection/:path/
+    notes:
+      output: true
+      permalink: /:collection/:path/
 
-    # Defaults
+  # Defaults
     defaults:
-      # ...
-      # _posts
-      - scope:
-          path: ""
-          type: posts
-        values:
-          layout: single
-          author_profile: true
-          read_time: true
-          comments: # true
-          share: true
-          related: true
-      # _research
-      - scope:
-          path: ""
-          type: research
-        values:
-          layout: single
-          author_profile: true
-          read_time: true
-          comments: # true
-          share: true
-          related: true
-      # _notes
-      - scope:
-          path: ""
-          type: notes
-        values:
-          layout: single
-          author_profile: true
-          read_time: true
-          comments: # true
-          share: true
-          related: true
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: splash
+      author_profile: false
+      read_time: false
+      comments: false
+      share: true
+      related: true
+  # _notes
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
    ```
 
 #### 添加所需的文件
