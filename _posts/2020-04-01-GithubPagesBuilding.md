@@ -7,7 +7,7 @@ categories:
 ---
 考研复试通知还没出来，闲来无事想尝试一下搭建自己的博客，用来记录漫长的学习之路，[Github Pages](https://github.io)平台的看起来比较干净，可自定义程度较高，那么就开始了。
 
-Github Pages支持[Jekyll](https://jekyllrb.com/)作为后台将用户基于Markdown的博文等转换为静态页面。[Jekyll Themes](http://jekyllthemes.org/)上列出了许多Jekyll主题模板，并且基本上都可以直接下载使用。[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)是这些众多主题模板中比较干净并且功能强大的模板之一，那么就入选本小站的模板了。
+Github Pages支持[Jekyll](https://jekyllrb.com/)作为后台将用户基于Markdown的博文等转换为静态页面。[Jekyll Themes](http://jekyllthemes.org/)上列出了许多Jekyll主题模板，并且基本上都可以直接下载使用。[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)比较干净并且功能齐全，那么就入选本小站的模板了。
 
 另外一个比较干净的面向简历的Jekyll模板[Online CV](http://jekyllthemes.org/themes/online-cv/)。这个模板按简历的布局将页面展示出来。
 
