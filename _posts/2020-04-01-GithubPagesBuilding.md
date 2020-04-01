@@ -89,7 +89,7 @@ main:
   - title: "Blogs"
     url: /
   - title: "Archives"
-    url: /cloud/
+    url: /archives/
   - title: "Research"
     url: /research/
   - title: "Notes"
