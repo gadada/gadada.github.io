@@ -13,7 +13,7 @@ Github Pages支持[Jekyll](https://jekyllrb.com/)作为后台将用户基于Mark
 
 综上，本小站主要是基于[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)以及[Online CV](http://jekyllthemes.org/themes/online-cv/)这两个Jekyll模板进行整合。
 
- > **由于git对国内的网络不太友好，本站所有内容会尽量减少大体积图片，以免长时间处于加载中**
+ > **由于git对国内的网络不太友好，本站所有内容会尽量减少大体积图片**
 
 
 {% include toc %}
