@@ -162,13 +162,12 @@ main:
 ```
 
 #### 添加所需的文件
-创建`_pages`目录，并在该目录下创建相应的文件：
+创建`_pages`目录，并在该目录下创建相应的[文件](https://github.com/gadada/gadada.github.io/tree/master/_pages)：
 
- - [`_pages/category-archive.html`](https://github.com/huajianmao/huajianmao.github.io/blob/bd3e917255b9d13ab3221191ed62ab4fb5e9f558/_pages/category-archive.html)
- - [`_pages/tag-archive.html`](https://github.com/huajianmao/huajianmao.github.io/blob/bd3e917255b9d13ab3221191ed62ab4fb5e9f558/_pages/tag-archive.html)
- - [`_pages/projects.html`](https://github.com/huajianmao/huajianmao.github.io/blob/bd3e917255b9d13ab3221191ed62ab4fb5e9f558/_pages/projects.html)
- - [`_pages/research.html`](https://github.com/huajianmao/huajianmao.github.io/blob/bd3e917255b9d13ab3221191ed62ab4fb5e9f558/_pages/research.html)
- - [`_pages/tool-archive.html`](https://github.com/huajianmao/huajianmao.github.io/blob/bd3e917255b9d13ab3221191ed62ab4fb5e9f558/_pages/tool-archive.html)
+ - `_pages/category-archive.html`
+ - `_pages/tag-archive.
+ - `_pages/notes.html`
+ - `_pages/research.html`
 
 文件内容中的`layout`指这个页面应该用`_layout`目录中的那个页面布局，`permalink`指得是给这个页面赋予一个什么永久的URL地址，该地址和`_data/navigation.yml`中的各`url`字段对应。需要注意的是，这里的permalink是源，也就是说，navigation中的url是有这些文件中的`permalink`字段决定的。
 
