@@ -79,7 +79,7 @@ timezone: Asia/Shanghai
 
 ### 配置导航栏
 Jekyll的导航栏数据主要在`_data/navigation.yml`中指定。
-本小站中主要分为三部分，记录一些日常的想法(Blogs)，分类查找文章(Archives)，未来可能研究的一些内容(Research)，平时的一些学习记录(Notes)，，以及我的个人说明(About)。
+本小站中主要分为三部分，记录一些日常的想法(Blogs)，文章归档(Archives)，未来可能研究的一些内容(Research)，平时的一些学习记录(Notes)，，以及我的个人说明(About)。
 如上所述，将`_data/navigation.yml`做了如下修改。
 
 ``` yaml
@@ -107,7 +107,6 @@ main:
 
 #### 设置配置文件
 主要是需要修改配置文件项，并建立相应的页面文件，并在页面文件中指定相应的`permalink`。
-具体修改情况请见[Commit bd3e917](https://github.com/huajianmao/huajianmao.github.io/commit/bd3e917255b9d13ab3221191ed62ab4fb5e9f558#diff-aeb42283af8ef8e9da40ededd3ae2ab2)
 
  - 修改`_config.yml`文件
 
@@ -117,10 +116,7 @@ main:
       research:
         output: true
         permalink: /:collection/:path/
-      projects:
-        output: true
-        permalink: /:collection/:path/
-      tools:
+      notes:
         output: true
         permalink: /:collection/:path/
 
@@ -149,21 +145,10 @@ main:
           comments: # true
           share: true
           related: true
-      # _projects
+      # _notes
       - scope:
           path: ""
-          type: projects
-        values:
-          layout: single
-          author_profile: true
-          read_time: true
-          comments: # true
-          share: true
-          related: true
-      # _tools
-      - scope:
-          path: ""
-          type: tools
+          type: notes
         values:
           layout: single
           author_profile: true
