@@ -237,10 +237,10 @@ compress_html:
 
 # Collections
 collections:
-  research:
+  blogs:
     output: true
     permalink: /:collection/:path/
-  projects:
+  research:
     output: true
     permalink: /:collection/:path/
   notes:
@@ -265,17 +265,6 @@ defaults:
   - scope:
       path: ""
       type: research
-    values:
-      layout: splash
-      author_profile: false
-      read_time: false
-      comments: false
-      share: true
-      related: true
-  # _projects
-  - scope:
-      path: ""
-      type: projects
     values:
       layout: splash
       author_profile: false
