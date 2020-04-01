@@ -41,6 +41,7 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
 ## 配置Minimal Mistakes
 在上面的步骤完成后，在浏览器里打开username.github.io就能看到：
 ![Page after first commit]({{site.url}}{{site.baseurl}}/images/after-first-commit.jpg)
+> ***现在开始关注你的邮箱，接下来的步骤如果出现错误在push后会收到及时的提示邮件***
 
 ### 博客基础信息配置
 Jekyll的配置文件为`_config.yml`，该文件可以对大部分的系统信息进行配置。
