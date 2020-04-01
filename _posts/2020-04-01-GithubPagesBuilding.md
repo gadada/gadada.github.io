@@ -165,7 +165,7 @@ main:
 创建`_pages`目录，并在该目录下创建相应的[文件](https://github.com/gadada/gadada.github.io/tree/master/_pages)：
 
  - `_pages/category-archive.html`
- - `_pages/tag-archive.
+ - `_pages/tag-archive.`
  - `_pages/notes.html`
  - `_pages/research.html`
  - `_pages/archives.html`
