@@ -26,8 +26,8 @@ Minimal Mistakes的主页就是基于Github Pages运行的，因此，想要搭�
 
  1. Create a repository：登录自己的帐号，新建**gadada.github.io**
  2. Set it public: 将**gadada.github.io**库设置为Public
- 3. Clone it to local: `git clone git clone https://github.com/huajianmao/huajianmao.github.io`
-> **public = free，clone need git bash or gitthub desktop**
+ 3. Clone it to local
+> **public = free，clone need git bash or github desktop**
 
 ### Copy files from Minimal Mistakes
  1. 下载[Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes/archive/master.zip)代码包
