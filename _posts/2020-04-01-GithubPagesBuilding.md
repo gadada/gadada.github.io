@@ -103,7 +103,7 @@ main:
  > **404** File not found
 
 产生这个问题的原因是，github pages不知道`/research/`或者`/projects/`或者`/cv/`等这些地址对应的访问内容放在哪里。
-因此，我们需要对这些地址进行相应的配置。
+因此，需要对这些地址进行相应的配置。
 
 #### 设置配置文件
 主要是需要修改配置文件项，并建立相应的页面文件，并在页面文件中指定相应的`permalink`。
@@ -168,55 +168,44 @@ main:
  - `_pages/tag-archive.
  - `_pages/notes.html`
  - `_pages/research.html`
+ - `_pages/archives.html`
 
-文件内容中的`layout`指这个页面应该用`_layout`目录中的那个页面布局，`permalink`指得是给这个页面赋予一个什么永久的URL地址，该地址和`_data/navigation.yml`中的各`url`字段对应。需要注意的是，这里的permalink是源，也就是说，navigation中的url是有这些文件中的`permalink`字段决定的。
+文件内容中的`layout`指这个页面应该用`_layout`目录中的那个页面布局，`permalink`指得是给这个页面赋予一个URL地址，该地址和`_data/navigation.yml`中的各`url`字段对应。需要注意的是，这里的permalink是源，也就是说，navigation中的url是由这些文件中的`permalink`字段决定的。
 
 
 ## 添加并配置Online CV
-前面提到，Minimal Mistakes的页面布局直接拿来做简历模板的话，感觉不够美观。
-在网上查找后，[Online CV](http://jekyllthemes.org/themes/online-cv/)相对来说还是挺不错的，配色、布局等都挺好。
-所以考虑着将Online CV整合到Minimal Mistake这个模板中。
+接下来将简历模板[Online CV](http://jekyllthemes.org/themes/online-cv/)整合到Minimal Mistake这个模板中。
 
-### 将Online CV融合进Minimal Mista
-本着偷懒的原则，怎么快怎么来，基本上是无脑将Online CV中的文件搬到了Minimal Mistakes中。
-**FIXME**
+### 将Online CV融合进Minimal Mistakes
 
- 1. [下载](https://github.com/sharu725/online-cv/archive/master.zip)Online CV的代码库。
- 2. 将代码库中的`index.html`放入到github pages代码库（例如，我这里是刚才建立的huajianmao.github.io）的根目录下，但是由于根目录下已经有一个同名的存在，所以，我将Online CV的`index.html`文件搬过来的时候将它重命名为了`cv.html`。 [^cv-navigation]
+ 1. 下载Online CV的代码库。
+ 2. 将代码库中的`index.html`放入到github pages代码库，但是由于根目录下已经有一个同名的存在，因此把Online CV的`index.html`文件搬过来的时候将它重命名为了`cv.html`。 [^cv-navigation]
  3. 将`_layouts/default.html`文件拷贝为github pages代码库的`_layouts/cv.html`。这里相当于在Minimal Mistakes中新建立了一个简历模板布局。同时需要修改`cv.html`文件中对布局的引用，将`layout`字段的`default`改为`cv`。
  4. 将`_includes`目录拷贝为github pages代码库的`_includes/cv`目录。
- 5. 由于我们是将Online CV的文件合并到了不同的目录中，我们需要对Online CV代码中的include路径进行相应调整。通过`grep include _config.yml _layouts _includes -r`，便可以直到哪些文件需要进行目录调整。[^include-dir-adjust]
+ 5. 由于将Online CV的文件合并到了不同的目录中，需要对Online CV代码中的include路径进行相应调整。通过`grep include _config.yml _layouts _includes -r`，便可以知道哪些文件需要进行目录调整。[^include-dir-adjust]
  6. 将Online CV的assets目录中的各个子目录分别移动倒相应的目录中
  7. 修改目录变动引起的所有文件变更。
  8. 整合`_config.yml`内容
  9. 将Online CV中的所有对配置文件的变量引用合并倒Minimal Mistakes中的对相应字段的引用。
 
-[^cv-navigation]: `_data/navigation.yml`中的About项设定的`url`字段就是由这里将`cv.html`放置在根目录下决定的，如果我们将它的名字命名为`resume.html`的话，那么`_data/navigation.yml`中的相应url也需要改为`resume`。
-[^include-dir-adjust]: 我们主要调整了[`_layouts/cv.html`](https://github.com/huajianmao/huajianmao.github.io/blob/master/_layouts/cv.html)和[`_includes/cv/sidebar.html`](https://github.com/huajianmao/huajianmao.github.io/blob/master/_includes/cv/sidebar.html)两个文件中的include内容。
+[^cv-navigation]: `_data/navigation.yml`中的About项设定的`url`字段就是由这里将`cv.html`放置在根目录下决定的，如果将它的名字命名为`resume.html`的话，那么`_data/navigation.yml`中的相应url也需要改为`resume`。
+[^include-dir-adjust]: 主要调整了`_layouts/cv.html`和`_includes/cv/sidebar.html`两个文件中的include内容。
 
 ### Online CV页面微调整
-Minimal Mistakes和Online CV本是两个相互独立的模板，
-而且Online CV本仅用作CV展示，所以它并没有跳转到本站内其他页面的导航。
-但要让它和Minimal Mistakes更融合一些，
-那么就需要在Online CV页面上添加导航到Minimal Mistakes某个页面中的能力。
-另外，作为简历，那么许多时候希望能够下载打印，
-所以如果能有个PDF版本下载那么就更好了。
-目前还没有去深究如何直接把html的简历美观的转换成一个PDF版本。
-本文只提供了一个链接到由Latex生成的PDF简历地址去下载的功能。
-下一步可能会考虑如何编写一份简历生成多种格式版本的方法。
 
 #### 添加页面导航按钮
 第一步是在Online CV的页面中添加一个`Home`链接按钮，以便在CV页能够方便的跳转到博客主页中。
 
 Online CV的页面布局是在[`_layout/cv.html`](https://github.com/huajianmao/huajianmao.github.io/blob/master/_layouts/cv.html#L12)文件中定义的，所以想要在CV页添加按钮，主要是在该页面中添加相应代码。
 
+**Home按钮**
 ``` html
         <div class="back-to-home">
           <a href="/">Home</a>
         </div>
 ```
 
-但是考虑到美观，要合理的布局`Home`按钮的位置等样式。在前面的处理中，Online CV使用的是单独的[css文件](https://github.com/huajianmao/huajianmao.github.io/blob/master/assets/css/cv/styles.css)，所以，我在这个文件中额外定义了一个`back-to-home`类，它的内容如下，详见[styles.css](https://github.com/huajianmao/huajianmao.github.io/blob/master/assets/css/cv/styles.css#L54)：
+Online CV使用的是单独的[css文件](https://github.com/gadada/gadada.github.io/blob/master/assets/css/cv/styles.css)，
 
 ``` css
 .back-to-home {
@@ -237,7 +226,7 @@ Online CV的页面布局是在[`_layout/cv.html`](https://github.com/huajianmao/
 }
 ```
 
-此外，Online CV使用了[Responsive css](https://en.wikipedia.org/wiki/Responsive_web_design)，如果直接使用上面定义的`back-to-home`样式，那么在小屏幕的时候，Online CV的主体样式变化后，`Home`按钮依然会在左边，并且会被屏幕挡住。基于这个原因，我们还需要在`styles.css`中添加相应的[Responsive CSS](https://github.com/huajianmao/huajianmao.github.io/blob/master/assets/css/cv/styles.css#L313)，其中`max-width: 1100px`是根据`Online CV主体页面的宽度`+`按钮宽度的两倍`计算得到。
+此外，Online CV使用了[Responsive css](https://en.wikipedia.org/wiki/Responsive_web_design)，如果直接使用上面定义的`back-to-home`样式，那么在小屏幕的时候，Online CV的主体样式变化后，`Home`按钮依然会在左边，并且会被屏幕挡住。基于这个原因，还需要在`styles.css`中添加相应的[Responsive CSS](https://github.com/gadada/gadada.github.io/blob/master/assets/css/cv/styles.css#L313)，其中`max-width: 1100px`是根据`Online CV主体页面的宽度`+`按钮宽度的两倍`计算得到。
 
 ``` css
 @media (max-width: 1100px) { /* 960px + 2 * (50 + 2*10)px*/
@@ -251,12 +240,12 @@ Online CV的页面布局是在[`_layout/cv.html`](https://github.com/huajianmao/
 }
 ```
 
-严格来说，样式不应该在css中直接修改，而应该在scss中修改，然后在重新build生成。这里权是为了偷懒。 :p
+严格来说，样式不应该在css中直接修改，而应该在scss中修改，然后在重新build生成。
 
 #### 添加PDF版本下载按钮
 另外，还需要添加一个PDF版本下载按钮，处理方式和`Home`按钮基本类似。
-分别在[`_layout/cv.html`](https://github.com/huajianmao/huajianmao.github.io/blob/master/_layouts/cv.html#L15)中添加相应html代码，
-以及在`styles.css`中添加相应[css代码](https://github.com/huajianmao/huajianmao.github.io/blob/master/assets/css/cv/styles.css#L66)即可。
+分别在[`_layout/cv.html`](https://github.com/gadada/gadada.github.io/blob/master/_layouts/cv.html#L15)中添加相应html代码，
+以及在`styles.css`中添加相应[css代码](https://github.com/gadada/gadada.github.io/blob/master/assets/css/cv/styles.css#L66)即可。
 
 ``` html
 <!-- _layouts/cv.html -->
