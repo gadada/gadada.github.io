@@ -210,7 +210,7 @@ int main()
 
 进一步：7=22+2+20（21用2表示）
 
-        3=2+2^0
+    3=2+2^0
 
 所以最后137可表示为：
 
@@ -277,3 +277,44 @@ int main()
 	return 0;
 }
 ```
+再来看官方代码
+
+```c++
+#include <iostream>
+using namespace std;
+
+inline int GetBit(int n, int i)
+{
+	return (n >> i) & 1;
+}
+void Print(int n) {
+	bool first = true;
+	for(int i = 15; i >= 0; --i) {
+		if(GetBit(n, i)) {
+			if(!first) {
+				cout << "+";
+			}
+			else
+				first = false;
+			if(i == 0)
+				cout << "2(0)";
+			else if(i == 1)
+			 	cout << "2";
+			else {
+				cout << "2(";
+				Print(i);
+				cout << ")";
+			}
+		}
+	}
+}
+int main()
+{
+	int n;
+	cin >> n;
+	Print(n);
+
+	return 0;
+}
+```
+- 使用位运算来计算`<=n`的最大的2的`i`次幂
