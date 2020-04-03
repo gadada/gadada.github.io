@@ -44,5 +44,70 @@ cba
     3）每次先寻找最大的活动状态的元素`max`，将它与所指邻位交换，然后把所有比`max`大的元素的移动方向反转，直到所有元素都不处于活动状态为止
 
 ```c
+#include <stdio.h>
+#include <string.h>
 
+int move[6] = { 0 };
+int n;
+void swap(char* a, char* b)
+{
+	char tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+void reverse(int* t)
+{
+	if (*t == 0)*t = 1;
+	else *t = 0;
+}
+void allrange(char* p)
+{
+	printf("%s\n", p);
+	int max = 0, maxnum = -1;
+	for (int i = 0; i < n; ++i)
+		if (move[i] == 0 && i - 1 >= 0 && p[i - 1] < p[i] ||
+			move[i] == 1 && i + 1 < n && p[i + 1] < p[i]) {
+			if (p[i] > max) {
+				max = p[i];
+				maxnum = i;
+			}
+		}
+	if (max == 0)return;
+	if (move[maxnum] == 0) {
+		swap(&p[maxnum], &p[maxnum - 1]);
+		swap(&move[maxnum], &move[maxnum - 1]);
+		maxnum -= 1;
+		for (int i = 0; i < n; ++i)
+			if (p[i] > p[maxnum])reverse(&move[i]);
+	}
+	else {
+		swap(&p[maxnum], &p[maxnum + 1]);
+		swap(&move[maxnum], &move[maxnum + 1]);
+		maxnum += 1;
+		for (int i = 0; i < n; ++i)
+			if (p[i] > p[maxnum])reverse(&move[i]);
+	}
+	allrange(p);
+}
+
+int main()
+{
+	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	char ori[7];
+	scanf("%s", ori);
+	n = strlen(ori);
+	allrange(ori);
+
+	return 0;
+}
 ```
+将算法表示出来大概就是这个样子，然后这是输出
+```markdown
+123
+132
+312
+321
+231
+213
+```
+那么问题来了，题目还要求答案按字母序从小到大打印排列
