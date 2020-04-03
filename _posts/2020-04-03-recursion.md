@@ -236,3 +236,44 @@ int main()
 ```markdown
 2(2(2)+2+2(0))+2(2+2(0))+2(0)
 ```
+
+这道题就是典型的递归，最小子项为`2`和`2(0)`，当n是2的m次幂时，`2(power(m))`递归计算；否则分为两项递归，其中一项为2的m次幂。代码如下：
+
+```c
+#include <stdio.h>
+
+void Power(int n)
+{
+	if (n == 1)printf("2(0)");
+	else if (n == 2)printf("2");
+	else {
+		int a = 1, b, cnt = -1;
+		while (a <= n) {
+			a *= 2;
+			++cnt;
+		}
+		a /= 2;
+		b = n - a;
+		if (a > 2) {
+			printf("2(");
+			Power(cnt);
+			printf(")");
+		}
+		else printf("2");
+		if (b != 0) {
+			printf("+");
+			Power(b);
+		}
+	}
+}
+
+int main()
+{
+	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	int n;
+	scanf("%d", &n);
+	Power(n);
+
+	return 0;
+}
+```
