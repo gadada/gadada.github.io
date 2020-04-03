@@ -92,7 +92,6 @@ void allrange(char* p)
 
 int main()
 {
-	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
 	char ori[7];
 	scanf("%s", ori);
 	n = strlen(ori);
@@ -110,4 +109,49 @@ int main()
 231
 213
 ```
-那么问题来了，题目还要求答案按字母序从小到大打印排列，大概要把需要输出的排列存起来，再花`log n`的时间排序，然后输出，挺浪费时间空间的，那么有没有更好的方法呢？
+那么问题来了，题目还要求答案按字母序从小到大打印排列，大概要把需要输出的排列存起来，再花`nlog n`的时间排序，然后输出，挺浪费时间空间的，而且用到的还是尾递归，其实是可以写成循环的，那么有没有更好的方法呢？
+
+- 递归实现
+
+    从集合中依次选出每一个元素，作为排列的第一个元素，然后对剩余的元素进行全排列，将其化简成子问题，做递归处理，从而得到所有元素的全排列。在处理子问题前将其排好序就OK了
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void swap(char* a, char* b)
+{
+	char tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+int compare(const void* a, const void* b)
+{
+	return *(char*)a - *(char*)b;
+}
+void allrange(char* p, int from, int to)
+{
+	if (from == to) printf("%s\n", p);
+	else {
+		for (int j = from; j <= to; ++j) {
+			char tmp[7];
+			strcpy(&tmp[from], &p[from]);
+			swap(&p[j], &p[from]);
+			qsort(&p[from + 1], to - from, sizeof(char), compare);
+			allrange(p, from + 1, to);
+			strcpy(&p[from], &tmp[from]);
+		}
+	}
+}
+
+int main()
+{
+	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	char ori[7];
+	scanf("%s", ori);
+	int n = strlen(ori);
+	allrange(ori, 0, n - 1);
+
+	return 0;
+}
+```
