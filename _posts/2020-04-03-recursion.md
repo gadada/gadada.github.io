@@ -324,9 +324,9 @@ int main()
 
 The objective of the program you are going to produce is to evaluate boolean expressions as the one shown next:
 
-	Expression: ( V | V ) & F & ( F | V )
+Expression: `( V | V ) & F & ( F | V )`
 
-where V is for True, and F is for False. The expressions may include the following operators: ! for not , & for and, | for or , the use of parenthesis for operations grouping is also allowed.
+where V is for True, and F is for False. The expressions may include the following operators: ! for not, & for and, | for or, the use of parenthesis for operations grouping is also allowed.
 
 To perform the evaluation of an expression, it will be considered the priority of the operators, the not having the highest, and the or the lowest. The program must yield V or F , as the result for each expression in the input file.
 - 输入：
@@ -340,12 +340,15 @@ To perform the evaluation of an expression, it will be considered the priority o
 
 	Use the same format as that shown in the sample output shown below.
 - 样例输入
-
-		( V | V ) & F & ( F| V)
-		!V | V & V & !F & (F | V ) & (!F | F | !V & V)
-		(F&F|V|!V&!F&!(F|F&V))
+```markdown
+( V | V ) & F & ( F| V)
+!V | V & V & !F & (F | V ) & (!F | F | !V & V)
+(F&F|V|!V&!F&!(F|F&V))
+```
 - 样例输出
+```markdown
+Expression 1: F
+Expression 2: V
+Expression 3: V
+```
 
-		Expression 1: F
-		Expression 2: V
-		Expression 3: V
