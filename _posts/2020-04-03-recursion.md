@@ -326,19 +326,17 @@ The objective of the program you are going to produce is to evaluate boolean exp
 
 Expression: `( V | V ) & F & ( F | V )`
 
-where V is for True, and F is for False. The expressions may include the following operators: ! for not, & for and, | for or, the use of parenthesis for operations grouping is also allowed.
+where V is for True, and F is for False. The expressions may include the following operators: `!`for not, `&`for and, `|`for or, the use of parenthesis for operations grouping is also allowed.
 
 To perform the evaluation of an expression, it will be considered the priority of the operators, the not having the highest, and the or the lowest. The program must yield V or F , as the result for each expression in the input file.
 - 输入：
+The expressions are of a variable length, although will never exceed 100 symbols. Symbols may be separated by any number of spaces or no spaces at all, therefore, the total length of an expression, as a number of characters, is unknown.
 
-	The expressions are of a variable length, although will never exceed 100 symbols. Symbols may be separated by any number of spaces or no spaces at all, therefore, the total length of an expression, as a number of characters, is unknown.
+The number of expressions in the input file is variable and will never be greater than 20. Each expression is presented in a new line, as shown below.
+- 输出：
+For each test expression, print "Expression " followed by its sequence number, ": ", and the resulting value of the corresponding test expression. Separate the output for consecutive test expressions with a new line.
 
-	The number of expressions in the input file is variable and will never be greater than 20. Each expression is presented in a new line, as shown below.
-- 输出
-
-	For each test expression, print "Expression " followed by its sequence number, ": ", and the resulting value of the corresponding test expression. Separate the output for consecutive test expressions with a new line.
-
-	Use the same format as that shown in the sample output shown below.
+Use the same format as that shown in the sample output shown below.
 - 样例输入
 ```markdown
 ( V | V ) & F & ( F| V)
