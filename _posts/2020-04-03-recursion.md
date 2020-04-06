@@ -521,8 +521,7 @@ bool exp();
 bool factor();
 bool item();
 int ptr = 0;
-bool exp()
-{
+bool exp() {
 	bool result = item();
 	while(wholeExp[ptr] == '|' ) {
 		++ptr;
@@ -530,8 +529,7 @@ bool exp()
 	}
 	return result;
 }
-bool item()
-{
+bool item() {
 	bool result = factor();
 	while(wholeExp[ptr] == '&') {
 		++ptr;
@@ -539,34 +537,7 @@ bool item()
 	}
 	return result;
 }
-bool notExp()
-{
-	//wholeExp[ptr] == '!' when called;
-	ptr++;
-	bool result;
-	switch(wholeExp[ptr]) {
-		case 'F':
-			++ptr;
-			return true;
-			break;
-		case 'V':
-			++ptr;
-			return false;
-			break;
-		case '(':
-			++ptr;
-			result = exp();
-			++ptr;  //skip ')'
-			return !result;
-			break;
-		case '!':
-			result = notExp();
-			return !result;
-			break;
-	}
-}
-bool factor()
-{
+bool factor() {
 	bool result;
 	switch( wholeExp[ptr]) {
 		case 'F':
@@ -584,7 +555,8 @@ bool factor()
 			return result;
 			break;
 		case '!':
-			result = notExp();
+			++ptr;
+			result = !factor();
 			return result;
 			break;
 	}
@@ -601,10 +573,8 @@ int main()
 			wholeExp[i] = 0;
 			if( i > 0) {
 				ptr = 0;
-				bool r = exp();
-				if (r) {
+				if (exp())
 					printf("Expression %d: V\n",t++);
-				}
 				else
 					printf("Expression %d: F\n",t++);
 			}
