@@ -348,7 +348,7 @@ Expression 2: V
 Expression 3: V
 ```
 
-- 表达式递归求值的常规套路
+- 表达式递归求值的典型套路
 
 ```c++
 
@@ -418,4 +418,201 @@ int factor()
 	return result;
 }
 ```
-这里主要是符号的不同，由原来的`+``-``*``/`变成了`&``|``!`，其中优先级依次是`! > & > |`
+这里主要是符号的不同，由原来的`+``-``*``/`变成了`&``|``!`，其中优先级依次是`! > & > |`，按本题的要求更换一些参数就OK了
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int expression();
+int term();
+int factor();
+char p[110];
+int f = 0;
+int expression()
+{
+	int result = term();
+	while (1) {
+		char op = p[f]; //读入一个字符
+		if (op == '&' || op == '|') {
+			f++; //取走一个字符
+			int value = term();
+			if (op == '&') result = result && value;
+			else result = result || value;
+		}
+		else
+			break;
+	}
+	return result;
+}
+int term()
+{
+	int result;
+	char op = p[f];
+	if (op == '!') {
+		f++;
+		result = !factor();
+	}
+	else
+		result = factor();
+
+	return result;
+}
+int factor()
+{
+	int result = 0;
+	char c = p[f];
+	if (c == '(') {
+		f++;
+		result = expression();
+		f++;
+	}
+	else if (c == 'V') {
+		result = 1;
+		f++;
+	}
+	else if (c == 'F') {
+		result = 0;
+		f++;
+	}
+	else if (c == '!') {
+		result = term();
+	}
+
+	return result;
+}
+int main()
+{
+	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	int cnt = 0;
+	char tmp[10000], c;
+	while (scanf("%[^\n]", tmp) != EOF) {
+		getchar();//读入`\n`
+		int i = 0, j = 0, n;
+		n = strlen(tmp);
+		while (i < n) {
+			if (tmp[i] != ' ') p[j++] = tmp[i];
+			i++;
+		}
+		p[j] = '\0';
+		printf("Expression %d: ", ++cnt);
+		printf("%c\n", (expression() ? 'V' : 'F'));
+		memset(tmp, 0, sizeof(tmp));
+		f = 0;
+	}
+
+	return 0;
+}
+```
+- 有以下几点需要注意
+
+	连续读取多个带空格的字符串，[scanf](https://gadada.github.io/notes/2020-04-06-String/)的相关细节
+
+	`!`由于优先级较高，即可以位于因子的首部，也可以位于项的首部
+
+官方答案
+
+```c++
+#include <iostream>
+#include <cstdio>
+using namespace std;
+char wholeExp[200];
+bool exp();
+bool factor();
+bool item();
+int ptr = 0;
+bool exp()
+{
+	bool result = item();
+	while(wholeExp[ptr] == '|' ) {
+		++ptr;
+		result = result | item();
+	}
+	return result;
+}
+bool item()
+{
+	bool result = factor();
+	while(wholeExp[ptr] == '&') {
+		++ptr;
+		result = result & factor();
+	}
+	return result;
+}
+bool notExp()
+{
+	//wholeExp[ptr] == '!' when called;
+	ptr++;
+	bool result;
+	switch(wholeExp[ptr]) {
+		case 'F':
+			++ptr;
+			return true;
+			break;
+		case 'V':
+			++ptr;
+			return false;
+			break;
+		case '(':
+			++ptr;
+			result = exp();
+			++ptr;  //skip ')'
+			return !result;
+			break;
+		case '!':
+			result = notExp();
+			return !result;
+			break;
+	}
+}
+bool factor()
+{
+	bool result;
+	switch( wholeExp[ptr]) {
+		case 'F':
+			++ptr;
+			return false;
+			break;
+		case 'V':
+			++ptr;
+			return true;
+			break;
+		case '(':
+			++ptr;
+			result = exp();
+			++ptr;
+			return result;
+			break;
+		case '!':
+			result = notExp();
+			return result;
+			break;
+	}
+}
+int main()
+{
+	char c;
+	int i = 0;
+	int t = 1;
+	int n = EOF + 1;
+	while(n != EOF) {
+		 n =  scanf("%c",&c);
+		if(	n == EOF || c == '\n') {
+			wholeExp[i] = 0;
+			if( i > 0) {
+				ptr = 0;
+				bool r = exp();
+				if (r) {
+					printf("Expression %d: V\n",t++);
+				}
+				else
+					printf("Expression %d: F\n",t++);
+			}
+			i = 0;
+		}
+		else if( c != ' ')
+			wholeExp[i++] = c;
+	}
+}
+
+```
