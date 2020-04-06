@@ -511,9 +511,9 @@ int main()
 	int n = EOF + 1;
 	while(n != EOF) {
 		 n =  scanf("%c",&c);
-		if(	n == EOF || c == '\n') {
+		if(n == EOF || c == '\n') {
 			wholeExp[i] = 0;
-			if( i > 0) {
+			if(i > 0) {
 				ptr = 0;
 				if (exp())
 					printf("Expression %d: V\n",t++);
@@ -522,7 +522,7 @@ int main()
 			}
 			i = 0;
 		}
-		else if( c != ' ')
+		else if(c != ' ')
 			wholeExp[i++] = c;
 	}
 }
