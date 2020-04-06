@@ -348,3 +348,73 @@ Expression 2: V
 Expression 3: V
 ```
 
+- 表达式递归求值的常规套路
+```c++
+
+#include<iostream>
+#include<cctype>
+using namespace std;
+
+int expression();//表达式
+int term();//项
+int factor();//因子
+
+int main()
+{
+	cout << expression() <<endl;
+	return 0;
+}
+
+int expression()
+{
+	int result = term();
+	char c = cin.peek();
+	while(c == '+' || c == '-')
+	{
+		cin.get();
+		if(c == '+')
+		result += term();
+		else if(c == '-')
+		result -= term();
+		c = cin.peek();
+	}
+	return result;
+}
+
+int term()
+{
+	int result = factor();
+	char c = cin.peek();
+	while(c == '*' || c == '/')
+	{
+		cin.get();
+		if(c == '*')
+		result *= factor();
+		if(c == '/')
+		result /= factor();
+		c = cin.peek();
+	}
+	return result;
+}
+
+int factor()
+{
+	int result = 0;
+	char c = cin.peek();
+	if(c == '(')
+	{
+		cin.get();
+		result += expression();
+		cin.get();
+	}
+	else while(isdigit(c))
+	{
+		cin.get();
+		result = result * 10 + c - '0';
+		c = cin.peek();
+	}
+
+	return result;
+}
+```
+这里主要是符号的不同，由原来的`+``-``*``/`变成了`&``|``!`，其中优先级依次是`! > & > |`
