@@ -470,7 +470,6 @@ int factor() {
 	return result;
 }
 
-
 int main()
 {
 	freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
