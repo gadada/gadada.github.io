@@ -557,5 +557,28 @@ int main()
 那么，`f(n, k) = f(n - k, k) + f(n - 1, k - 1)`划分成"没有1"和"有1"
 
 ```c
+#include <stdio.h>
 
+int f(int n, int k)
+{
+	if (k == 1)return 1;
+	if (n == k)return 1;
+	else if (n < k)return 0;
+	else
+		return f(n - k, k) + f(n - 1, k - 1);
+}
+int main()
+{
+	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	int p;
+	while (scanf("%d", &p) != EOF) {
+		int result = 0;
+		for (int i = 1; i <= p; ++i)
+			result += f(p, i);
+
+		printf("%d\n", result);
+	}
+
+	return 0;
+}
 ```
