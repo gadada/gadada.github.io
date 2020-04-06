@@ -425,41 +425,28 @@ int factor()
 #include <string.h>
 
 int expression();
-int term();
 int factor();
 char p[110];
 int f = 0;
-int expression()
-{
-	int result = term();
+
+int expression() {
+	int result = factor();
 	while (1) {
-		char op = p[f]; //读入一个字符
+		char op = p[f];
 		if (op == '&' || op == '|') {
-			f++; //取走一个字符
-			int value = term();
-			if (op == '&') result = result && value;
-			else result = result || value;
+			f++;
+			int value = factor();
+			if (op == '&')
+				result = result && value;
+			else
+				result = result || value;
 		}
 		else
 			break;
 	}
 	return result;
 }
-int term()
-{
-	int result;
-	char op = p[f];
-	if (op == '!') {
-		f++;
-		result = !factor();
-	}
-	else
-		result = factor();
-
-	return result;
-}
-int factor()
-{
+int factor() {
 	int result = 0;
 	char c = p[f];
 	if (c == '(') {
@@ -476,14 +463,17 @@ int factor()
 		f++;
 	}
 	else if (c == '!') {
-		result = term();
+		f++;
+		result = !factor();
 	}
 
 	return result;
 }
+
+
 int main()
 {
-	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
 	int cnt = 0;
 	char tmp[10000], c;
 	while (scanf("%[^\n]", tmp) != EOF) {
@@ -510,57 +500,9 @@ int main()
 
 	`!`由于优先级较高，即可以位于因子的首部，也可以位于项的首部
 
-官方答案
+官方答案表达式求值部分类似，输入提供了另一种思路
 
 ```c++
-#include <iostream>
-#include <cstdio>
-using namespace std;
-char wholeExp[200];
-bool exp();
-bool factor();
-bool item();
-int ptr = 0;
-bool exp() {
-	bool result = item();
-	while(wholeExp[ptr] == '|' ) {
-		++ptr;
-		result = result | item();
-	}
-	return result;
-}
-bool item() {
-	bool result = factor();
-	while(wholeExp[ptr] == '&') {
-		++ptr;
-		result = result & factor();
-	}
-	return result;
-}
-bool factor() {
-	bool result;
-	switch( wholeExp[ptr]) {
-		case 'F':
-			++ptr;
-			return false;
-			break;
-		case 'V':
-			++ptr;
-			return true;
-			break;
-		case '(':
-			++ptr;
-			result = exp();
-			++ptr;
-			return result;
-			break;
-		case '!':
-			++ptr;
-			result = !factor();
-			return result;
-			break;
-	}
-}
 int main()
 {
 	char c;
