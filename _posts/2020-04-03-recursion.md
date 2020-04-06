@@ -582,7 +582,7 @@ int main()
 	return 0;
 }
 ```
-官方答案
+官方答案是另一种思路
 ```c++
 #include <iostream>
 using namespace std;
@@ -593,7 +593,7 @@ int ways(int n,int i)
 	if( i == 0)
 		return 0;
 	if( i <= n)
-		return ways(n-i,i) + ways(n,i-1);  //用i和不用i的情况。i可以重复使用
+		return ways(n-i,i) + ways(n,i-1);
 	else
 		return ways(n,i-1);
 }
@@ -604,3 +604,5 @@ int main()
 		cout << ways(n,n) << endl;
 }
 ```
+`f(n, i) = f(n - i, i) + f(n, i - 1)`划分成"有i"和"没有i"
+- 很好的体现了递归的思路，但花费了更多时间为代价
