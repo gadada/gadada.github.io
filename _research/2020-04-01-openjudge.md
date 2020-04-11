@@ -1,16 +1,16 @@
 ---
 title: "Test"
-excerpt: "An offline judge framework for Leetcode problems.<br>This project uses [gradle](https://gradle.org/) and [testng](http://testng.org/) to run and test the code."
+excerpt: "This part is under construction."
 header:
-  overlay_image: /assets/images/projects/leetcode/leetcode-header.jpg
+  overlay_image: /images/badlaugh.jpg
   overlay_filter: 0.6
-  logo: /assets/images/projects/leetcode/leetcode-logo.jpg
+  logo: /images/badlaugh.jpg
   cta_label : Github
-  cta_url: "https://github.com/huajianmao/leetcode"
+  cta_url: "https://github.com/gadada"
 tags:
   - leetcode
   - framework
-modified: 2017-02-08T10:45:09-04:00
+modified: 2020-04-01
 ---
 
 Coming soon...
