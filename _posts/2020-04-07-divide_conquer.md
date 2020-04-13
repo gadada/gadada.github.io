@@ -61,4 +61,5 @@ His C (2 <= C <= N) cows don't like this barn layout and become aggressive towar
   Huge input data,scanf is recommended.
 
 分析
+- coming soon
 
