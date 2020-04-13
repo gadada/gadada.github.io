@@ -27,3 +27,35 @@ int gcd(int n, int m)
 ## 分治
 分治法是建基于多项分支递归的一种很重要的算法范式。字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。
 
+### Q1
+[Aggressive cows](http://cxsjsxmooc.openjudge.cn/2020t2springall/007/)
+
+Farmer John has built a new long barn, with N (2 <= N <= 100,000) stalls. The stalls are located along a straight line at positions x1,...,xN (0 <= xi <= 1,000,000,000).
+
+His C (2 <= C <= N) cows don't like this barn layout and become aggressive towards each other once put into a stall. To prevent the cows from hurting each other, FJ want to assign the cows to the stalls, such that the minimum distance between any two of them is as large as possible. What is the largest minimum distance?
+
+输入
+
+* Line 1: Two space-separated integers: N and C
+
+* Lines 2..N+1: Line i+1 contains an integer stall location, xi
+
+输出
+
+* Line 1: One integer: the largest minimum distance
+样例输入
+5 3
+1
+2
+8
+4
+9
+样例输出
+3
+提示
+OUTPUT DETAILS:
+
+FJ can put his 3 cows in the stalls at positions 1, 4 and 8, resulting in a minimum distance of 3.
+
+Huge input data,scanf is recommended.
+
