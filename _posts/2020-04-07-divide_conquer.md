@@ -61,6 +61,8 @@ His C (2 <= C <= N) cows don't like this barn layout and become aggressive towar
   Huge input data,scanf is recommended.
 
 思路就是通过二分查找枚举mindist，从而找到最大的那一个
+
+另外，枚举之前要先排序，二分查找必须保证数据是有序的
 ```c
 #include<stdio.h>
 #include<stdlib.h>
