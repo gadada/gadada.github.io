@@ -255,3 +255,132 @@ int main()
 - 提示
 
   若约翰将前两天作为一个月，第三、四两天作为一个月，最后三天每天作为一个月，则最大月度开销为500。其他任何分配方案都会比这个值更大。
+
+分析
+- 左值`l`为所有天数里最大花销的一天
+- 右值`r`则为所有天数花销的总和
+```c
+#include<stdio.h>
+
+int n, m;
+int a[100000];
+int solve(int t) // t > a[i]
+{
+	int sum = 0, cnt = 0, i = 0;
+	while (i < n) {
+		if (sum + a[i] > t) {
+			sum = 0;
+			cnt++;
+		}
+		else
+			sum += a[i++];
+	}
+	if (sum != 0) cnt++;
+	if (cnt > m)return 0;
+	else return 1;
+}
+int main()
+{
+	//freopen("E:\\IDMdowanload\\in.txt", "r", stdin);
+	if (~scanf("%d %d", &n, &m)) {
+		int l = 0, r = 0;
+		for (int i = 0; i < n; ++i) {
+			scanf("%d", &a[i]);
+			if (a[i] > l)l = a[i];
+			r += a[i];
+		}
+		while (l <= r) {
+			int mid = (l + r) / 2;
+			if (solve(mid))
+				r = mid - 1;
+			else
+				l = mid + 1;
+		}
+		printf("%d\n", l);
+	}
+
+	return 0;
+}
+```
+
+官方答案
+```c++
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+int N,M ;
+int cost[100100];
+bool Valid(int c)
+{
+	int m = 1; //总月数
+	int curCost = 0; //本月花销
+	for(int i = 0;i < N; ++i) {
+		if(cost[i] > c )
+			return false;
+		if( curCost + cost[i] > c ) {
+			curCost = cost[i];
+			++m;
+			if( m > M )
+				return false;
+		}
+		else
+			curCost += cost[i];
+	}
+	return true;
+}
+int main()
+{
+	cin >> N >> M;
+	int L = 1 << 30,R = 0;
+	for(int i = 0; i < N; ++i) {
+		cin >> cost[i];
+		L = min(L,cost[i]);
+		R += cost[i];
+	}
+	int lastValid = 0;
+	while(L <= R) {
+		int mid = L + (R-L)/2;
+		if(Valid(mid)) {
+			lastValid = mid;
+			R = mid - 1;
+		}
+		else
+			L = mid +1;
+	}
+	cout << lastValid ;
+	return 0;
+}
+```
+
+### Q4
+[输出前k大的数](http://cxsjsxmooc.openjudge.cn/2020t2springall/010/)
+
+给定一个数组，统计前k大的数并且把这k个数从大到小输出。
+
+- 输入
+
+  第一行包含一个整数n，表示数组的大小。n < 100000。
+
+  第二行包含n个整数，表示数组的元素，整数之间以一个空格分开。每个整数的绝对值不超过100000000。
+
+  第三行包含一个整数k。k < n。
+- 输出
+
+  从大到小输出前k大的数，每个数一行。
+- 样例输入
+  ```markdown
+  10
+  4 5 6 9 8 7 1 2 3 0
+  5
+  ```
+- 样例输出
+  ```markdown
+  9
+  8
+  7
+  6
+  5
+  ```
+
