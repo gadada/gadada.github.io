@@ -173,3 +173,86 @@ int main()
 	return 0;
 }
 ```
+
+官方答案
+```c++
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+//const double PI = 3.1415927;
+//PI取3.1415926都不行，结果偏小， PI取3.1415927可以
+const double PI=acos(-1.0);
+const double eps = 1e-6;
+int r[10010];
+int N,F;
+bool Valid(double V)
+{
+	if( V < eps )
+		return true;
+	int total = 0;
+	for(int i = 0;i < N; ++i) {
+		double n =  r[i]*r[i] / V;
+		total += n;
+		if( total >= F)
+			return true;
+	}
+	return false;
+}
+int main()
+{
+	cin >> N >> F;
+	++F;
+	double maxV = 0;
+	for(int i = 0;i < N; ++i) {
+		cin >> r[i];
+		maxV = max(maxV,(double)r[i]*r[i]);
+	}
+	double L = 0,R = maxV;
+	while( R - L > eps ) {
+		double midV = L + (R-L )/2;
+		if( Valid(midV) )
+			L = midV;
+		else
+			R = midV;
+	}
+	cout << fixed << setprecision(3) << PI * L ;
+	return 0;
+}
+```
+
+### Q3
+[月度开销](http://cxsjsxmooc.openjudge.cn/2020t2springall/009/)
+
+农夫约翰是一个精明的会计师。他意识到自己可能没有足够的钱来维持农场的运转了。他计算出并记录下了接下来 N (1 ≤ N ≤ 100,000) 天里每天需要的开销。
+
+约翰打算为连续的M (1 ≤ M ≤ N) 个财政周期创建预算案，他把一个财政周期命名为fajo月。每个fajo月包含一天或连续的多天，每天被恰好包含在一个fajo月里。
+
+约翰的目标是合理安排每个fajo月包含的天数，使得开销最多的fajo月的开销尽可能少。
+
+
+
+- 输入：
+  第一行包含两个整数N,M，用单个空格隔开。
+  接下来N行，每行包含一个1到10000之间的整数，按顺序给出接下来N天里每天的开销。
+- 输出：
+  一个整数，即最大月度开销的最小值。
+- 样例输入
+  ```markdown
+  7 5
+  100
+  400
+  300
+  100
+  500
+  101
+  400
+  ```
+- 样例输出
+  ```markdown
+  500
+  ```
+- 提示
+
+  若约翰将前两天作为一个月，第三、四两天作为一个月，最后三天每天作为一个月，则最大月度开销为500。其他任何分配方案都会比这个值更大。
