@@ -138,7 +138,6 @@ int main()
 同样是用二分查找枚举合适的答案，但是要注意这里的左边界`l`要从0开始而不是最小的蛋糕体积
 ```c
 #include<stdio.h>
-#include<stdlib.h>
 #include<math.h>
 #define PI acos(-1)
 int n, f, p;
