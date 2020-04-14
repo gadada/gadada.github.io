@@ -134,3 +134,42 @@ int main()
   ```markdown
   25.133
   ```
+
+同样是用二分查找枚举合适的答案，但是要注意这里的左边界`l`要从0开始而不是最小的蛋糕体积
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#define PI acos(-1)
+int n, f, p;
+double a[10000];
+int solve(double t)
+{
+	int cnt = 0;
+	for (int i = 0; i < n; ++i)
+		cnt += (int)(a[i] / t);
+
+	return cnt > f;
+}
+int main()
+{
+	if (~scanf("%d %d", &n, &f)) {
+		double r = 0, l = 0;
+		for (int i = 0; i < n; ++i) {
+			scanf("%d", &p);
+			a[i] = PI * p * p;
+			if (a[i] > r)r = a[i];
+		}
+		while (l <= r) {
+			double mid = (l + r) / 2;
+			if (solve(mid))
+				l = mid + 1e-5;
+			else
+				r = mid - 1e-5;
+		}
+		printf("%.3lf\n", r);
+	}
+
+	return 0;
+}
+```
