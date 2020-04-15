@@ -521,3 +521,62 @@ void mergesort(int a[], int l, int rd)
 	}
 }
 ```
+
+逆序数即`R[m]`中出现比`L[n]`更小的数时，记录逆序数的个数
+```markdown
+if (L[i] <= R[j]) {
+			a[k] = L[i++];
+		}
+		else {
+			a[k] = R[j++];
+			cnt += n - i;
+		}
+```
+
+全部代码
+```c
+#include<stdio.h>
+#include<stdlib.h>
+#define maxsize 100000
+#define INF 999999
+int a[maxsize], n;
+long long cnt = 0;
+int L[maxsize / 2 + 1], R[maxsize / 2 + 1];
+void merge(int l, int ld, int rd)
+{
+	int i, j, k;
+	int n = ld - l + 1;
+	int m = rd - ld;
+	for (i = 0; i < n; ++i) L[i] = a[l + i];
+	for (j = 0; j < m; ++j) R[j] = a[ld + 1 + j];
+	L[n] = R[m] = INF; // 哨兵
+	for (i = 0, j = 0, k = l; k <= rd; ++k) {
+		if (L[i] <= R[j]) {
+			a[k] = L[i++];
+		}
+		else {
+			a[k] = R[j++];
+			cnt += n - i;
+		}
+	}
+}
+void mergesort(int l, int rd)
+{
+	if (l < rd) {
+		int ld = (l + rd) / 2;
+		mergesort(l, ld);
+		mergesort(ld + 1, rd);
+		merge(l, ld, rd);
+	}
+}
+int main()
+{
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i)
+		scanf("%d", &a[i]);
+	mergesort(0, n - 1);
+	printf("%lld\n", cnt);
+
+	return 0;
+}
+```
