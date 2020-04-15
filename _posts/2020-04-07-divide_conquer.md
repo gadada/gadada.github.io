@@ -385,3 +385,31 @@ int main()
   5
   ```
 
+第一反应就是qsort排序再输出，复杂度`nlogn`
+```c
+#include<stdio.h>
+#include<stdlib.h>
+int compare(const void* a, const void* b) {
+	return *(int*)b - *(int*)a;
+}
+int main()
+{
+	int n, k;
+	int a[100000];
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i)
+		scanf("%d", &a[i]);
+	scanf("%d", &k);
+	qsort(a, n, sizeof(int), compare);
+	for(int i = 0; i < k; ++i)
+		printf("%d\n", a[i]);
+
+	return 0;
+}
+```
+居然过了，看来给的数据没有太为难
+
+那么怎么融入分治法的思想，QuickSort
+```c
+
+```
