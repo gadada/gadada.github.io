@@ -455,9 +455,6 @@ int main()
 	int k;
 	scanf("%d", &k);
 	FindMaxK(a, 0, n - 1, k);
-	//for(int i = 0;i < n; ++i)
-	//	cout << a[i] << ",";
-	//cout << endl;
 	qsort(&a[n-k], k, sizeof(int), compare);
 	for (int i = n - 1; i >= n - k; --i)
 		printf("%d\n", a[i]);
