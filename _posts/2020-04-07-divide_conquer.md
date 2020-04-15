@@ -496,7 +496,28 @@ int main()
 
 	2. 注意结果可能超过int的范围，需要用long long存储。
 
-正如提示所言，开始吧= =
+正如提示所言，先看看归并排序
 ```c
-
+int a[maxsize], L[maxsize / 2 + 1], R[maxsize / 2 + 1];
+void merge(int a[], int l, int ld, int rd)
+{
+	int i, j, k;
+	int n = ld - l + 1;
+	int m = rd - ld;
+	for (i = 0; i < n; ++i) L[i] = a[l + i];
+	for (j = 0; j < m; ++j) R[j] = a[ld + 1 + j];
+	L[n] = R[m] = INF;
+	for (i = 0, j = 0, k = l; k <= rd; ++k)
+		if (L[i] <= R[j]) a[k] = L[i++];
+		else a[k] = R[j++];
+}
+void mergesort(int a[], int l, int rd)
+{
+	if (l < rd) {
+		int ld = (l + rd) / 2;
+		mergesort(a, l, ld);
+		mergesort(a, ld + 1, rd);
+		merge(a, l, ld, rd);
+	}
+}
 ```
