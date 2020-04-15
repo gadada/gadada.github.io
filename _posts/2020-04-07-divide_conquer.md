@@ -429,13 +429,13 @@ void FindMaxK(int a[], int s, int e, int k)
 {
 	if (s - e + 1 == k)
 		return;
-	int key = a[s];
+	int pivot = a[s];
 	int i = s, j = e;
 	while (i != j) {
-		while (j > i&& a[j] >= key)
+		while (j > i && a[j] >= pivot)
 			--j;
 		swap(&a[i], &a[j]);
-		while (i < j && a[i] <= key)
+		while (i < j && a[i] <= pivot)
 			++i;
 		swap(&a[i], &a[j]);
 	}
@@ -460,6 +460,5 @@ int main()
 		printf("%d\n", a[i]);
 	return 0;
 }
-
-
 ```
+其核心函数`FindMaxK`利用`pivot`来做快速排序，将其放在最终位置上，此时`pivot`右边的元素都比它大，利用这个原理，找出`k`个元素进行排序即可
