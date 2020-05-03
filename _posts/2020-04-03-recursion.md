@@ -351,7 +351,6 @@ Expression 3: V
 - 表达式递归求值的典型套路
 
 ```c++
-
 #include<iostream>
 #include<cctype>
 using namespace std;
@@ -365,7 +364,6 @@ int main()
 	cout << expression() <<endl;
 	return 0;
 }
-
 int expression()
 {
 	int result = term();
@@ -381,7 +379,6 @@ int expression()
 	}
 	return result;
 }
-
 int term()
 {
 	int result = factor();
@@ -397,7 +394,6 @@ int term()
 	}
 	return result;
 }
-
 int factor()
 {
 	int result = 0;
