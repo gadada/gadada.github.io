@@ -6,7 +6,7 @@ title: "久坐族必备的肌肉拉伸"
 ## 颈肌
 对于久坐族来说，脖子大概是最疼痛的地方。
 
-医学小天使掏出解剖生理学就拍下了一张图
+医学小天使掏出解剖生理学就拍下了一张图:
 
 ![picture]({{site.url}}{{site.baseurl}}/images/notes/jingji.jpg)
 
